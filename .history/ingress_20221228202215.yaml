@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name:
+spec:
+  rules:
+    - host:
+      http:
+        paths: /
+        backend:
+          serviceName: juice
+          servicePort: 3000

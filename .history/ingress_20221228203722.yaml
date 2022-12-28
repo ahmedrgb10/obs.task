@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: basicIngress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: obs.task.com
+      http:
+        paths:
+          path:
+          backend:
+            serviceName: juice
+            servicePort: 3000
